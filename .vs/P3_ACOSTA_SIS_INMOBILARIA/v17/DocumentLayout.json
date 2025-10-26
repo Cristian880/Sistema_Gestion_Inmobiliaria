@@ -1,0 +1,167 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Windows\\Downloads\\ProyectosProgramcionItla\\C#\\P3_ACOSTA_SIS_INMOBILARIA\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{E1980BE6-3568-4EAE-AF1F-13CBC0619199}|Sis_Inmobiliaria.Infrastructure.Shared\\Sis_Inmobiliaria.Infrastructure.Shared.csproj|c:\\users\\windows\\downloads\\proyectosprogramcionitla\\c#\\p3_acosta_sis_inmobilaria\\sis_inmobiliaria.infrastructure.shared\\class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E1980BE6-3568-4EAE-AF1F-13CBC0619199}|Sis_Inmobiliaria.Infrastructure.Shared\\Sis_Inmobiliaria.Infrastructure.Shared.csproj|solutionrelative:sis_inmobiliaria.infrastructure.shared\\class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D0803961-3BC9-432E-8568-E4101DF7BE38}|Sis_Inmobiliaria.Infrastructure.Persistence\\Sis_Inmobiliaria.Infrastructure.Persistence.csproj|c:\\users\\windows\\downloads\\proyectosprogramcionitla\\c#\\p3_acosta_sis_inmobilaria\\sis_inmobiliaria.infrastructure.persistence\\class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D0803961-3BC9-432E-8568-E4101DF7BE38}|Sis_Inmobiliaria.Infrastructure.Persistence\\Sis_Inmobiliaria.Infrastructure.Persistence.csproj|solutionrelative:sis_inmobiliaria.infrastructure.persistence\\class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{906F4D58-8F08-4B3B-A4F6-5EA89F35ECA4}|Sis_Inmobiliaria.Infrastructure.Identity\\Sis_Inmobiliaria.Infrastructure.Identity.csproj|c:\\users\\windows\\downloads\\proyectosprogramcionitla\\c#\\p3_acosta_sis_inmobilaria\\sis_inmobiliaria.infrastructure.identity\\class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{906F4D58-8F08-4B3B-A4F6-5EA89F35ECA4}|Sis_Inmobiliaria.Infrastructure.Identity\\Sis_Inmobiliaria.Infrastructure.Identity.csproj|solutionrelative:sis_inmobiliaria.infrastructure.identity\\class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{47EA2661-5B4D-4B0F-9848-EBFC80FC6311}|Sis_Inmobiliaria.Core.Domain\\Sis_Inmobiliaria.Core.Domain.csproj|c:\\users\\windows\\downloads\\proyectosprogramcionitla\\c#\\p3_acosta_sis_inmobilaria\\sis_inmobiliaria.core.domain\\class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{47EA2661-5B4D-4B0F-9848-EBFC80FC6311}|Sis_Inmobiliaria.Core.Domain\\Sis_Inmobiliaria.Core.Domain.csproj|solutionrelative:sis_inmobiliaria.core.domain\\class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C7934D4B-EA2C-4F67-8C62-5060AC44079D}|NewFolder1{C7934D4B-EA2C-4F67-8C62-5060AC44079D}|Sis_Inmobiliaria.Core.Application||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{53138CCD-6327-416E-ABFD-A8502136A488}|..\\Sis_Inmobiliaria.Core.Application\\Sis_Inmobiliaria.Core.Application.csproj|c:\\users\\windows\\downloads\\proyectosprogramcionitla\\c#\\sis_inmobiliaria.core.application\\class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D826A4B6-CC46-44DD-9E61-5AF7FB1C745C}|P3_ACOSTA_SIS_INMOBILARIA.csproj|c:\\users\\windows\\downloads\\proyectosprogramcionitla\\c#\\p3_acosta_sis_inmobilaria\\class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D826A4B6-CC46-44DD-9E61-5AF7FB1C745C}|P3_ACOSTA_SIS_INMOBILARIA.csproj|solutionrelative:class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{53138CCD-6327-416E-ABFD-A8502136A488}|..\\Sis_Inmobiliaria.Core.Application\\Sis_Inmobiliaria.Core.Application.csproj|c:\\users\\windows\\downloads\\proyectosprogramcionitla\\c#\\sis_inmobiliaria.core.application\\||{B270807C-D8C6-49EB-8EBE-8E8D566637A1}|5e9a8ac2-4f34-4521-858f-4c248ba31532"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 6,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{eefa5220-e298-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{e5c86464-96be-4d7c-9a8b-abcb3bbf5f92}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{40ea2e6b-2121-4bb8-a43e-c83c04b51041}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c64b9c2-e352-428e-a56d-0ace190b99a6}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Class1.cs",
+              "DocumentMoniker": "C:\\Users\\Windows\\Downloads\\ProyectosProgramcionItla\\C#\\P3_ACOSTA_SIS_INMOBILARIA\\Sis_Inmobiliaria.Infrastructure.Shared\\Class1.cs",
+              "RelativeDocumentMoniker": "Sis_Inmobiliaria.Infrastructure.Shared\\Class1.cs",
+              "ToolTip": "C:\\Users\\Windows\\Downloads\\ProyectosProgramcionItla\\C#\\P3_ACOSTA_SIS_INMOBILARIA\\Sis_Inmobiliaria.Infrastructure.Shared\\Class1.cs",
+              "RelativeToolTip": "Sis_Inmobiliaria.Infrastructure.Shared\\Class1.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-26T23:30:33.672Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Class1.cs",
+              "DocumentMoniker": "C:\\Users\\Windows\\Downloads\\ProyectosProgramcionItla\\C#\\P3_ACOSTA_SIS_INMOBILARIA\\Sis_Inmobiliaria.Infrastructure.Persistence\\Class1.cs",
+              "RelativeDocumentMoniker": "Sis_Inmobiliaria.Infrastructure.Persistence\\Class1.cs",
+              "ToolTip": "C:\\Users\\Windows\\Downloads\\ProyectosProgramcionItla\\C#\\P3_ACOSTA_SIS_INMOBILARIA\\Sis_Inmobiliaria.Infrastructure.Persistence\\Class1.cs",
+              "RelativeToolTip": "Sis_Inmobiliaria.Infrastructure.Persistence\\Class1.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-26T23:30:03.819Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Class1.cs",
+              "DocumentMoniker": "C:\\Users\\Windows\\Downloads\\ProyectosProgramcionItla\\C#\\P3_ACOSTA_SIS_INMOBILARIA\\Sis_Inmobiliaria.Infrastructure.Identity\\Class1.cs",
+              "RelativeDocumentMoniker": "Sis_Inmobiliaria.Infrastructure.Identity\\Class1.cs",
+              "ToolTip": "C:\\Users\\Windows\\Downloads\\ProyectosProgramcionItla\\C#\\P3_ACOSTA_SIS_INMOBILARIA\\Sis_Inmobiliaria.Infrastructure.Identity\\Class1.cs",
+              "RelativeToolTip": "Sis_Inmobiliaria.Infrastructure.Identity\\Class1.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-26T23:29:32.301Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Class1.cs",
+              "DocumentMoniker": "C:\\Users\\Windows\\Downloads\\ProyectosProgramcionItla\\C#\\P3_ACOSTA_SIS_INMOBILARIA\\Sis_Inmobiliaria.Core.Domain\\Class1.cs",
+              "RelativeDocumentMoniker": "Sis_Inmobiliaria.Core.Domain\\Class1.cs",
+              "ToolTip": "C:\\Users\\Windows\\Downloads\\ProyectosProgramcionItla\\C#\\P3_ACOSTA_SIS_INMOBILARIA\\Sis_Inmobiliaria.Core.Domain\\Class1.cs",
+              "RelativeToolTip": "Sis_Inmobiliaria.Core.Domain\\Class1.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-26T23:28:51.175Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Sis_Inmobiliaria.Core.Application",
+              "DocumentMoniker": "C:\\Users\\Windows\\Downloads\\ProyectosProgramcionItla\\C#\\Sis_Inmobiliaria.Core.Application\\Sis_Inmobiliaria.Core.Application.csproj",
+              "RelativeDocumentMoniker": "..\\Sis_Inmobiliaria.Core.Application\\Sis_Inmobiliaria.Core.Application.csproj",
+              "ToolTip": "C:\\Users\\Windows\\Downloads\\ProyectosProgramcionItla\\C#\\Sis_Inmobiliaria.Core.Application\\Sis_Inmobiliaria.Core.Application.csproj",
+              "RelativeToolTip": "..\\Sis_Inmobiliaria.Core.Application\\Sis_Inmobiliaria.Core.Application.csproj",
+              "Icon": "00000000-0000-0000-0000-000000000000.000000|iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAMYSURBVDhPzZRNaFxVFMd/7828yUdrg2lNpMVmk9DqxmZTBeki4FIXgoIg4kIXuoh7t4IV/FiVbtwILrU7ERV0YYtItVBtSoWkhZqWZjL5cvIyM\u002B\u002B9ez5c3JlJLW4EF174w\u002BVw7v/87/\u002Bce\u002BG/XO6eLJ795rI7fn9cFUSdIFCpUQao1KkClP14EAgKosbW8lcX7l355COA5MPPWz42PuppWsPcMQcRJ4gj4pQCVXBKdargJIkzkin1eo87rVHuNnNu//zp\u002BdVL7y0CpAAJCUmSAAlqoAZiUCpUAqVAEaAMcGC0xtEjXSYmrjLzaJdjh42HRnV4u7SeBOr0yLxL5l0a3qPmBakVIAUmPULoIWWPsujRSCvqSZPl5gUaI1c5eTxnZqo2JKxPjTdZOD3Hw4fGh0EcHDDzqFjjPpjhJNxqNvjlbsmlpY9ZOPECRyfz4dHUTchqCSNZOkQjS8jqCY3\u002BvpElZI2Yk6VJrIhz\u002BtQ8q3vXyB\u002B788izb585CZCKCO77TXbvw8CGcFSjWjFDzAgaqB2ocejIGOOT2fzBmbHXz7zx1Gwq\u002Bs\u002BE5vS77qj7kNgMKhHyXs5au0k6kmJmc1v55svTz0y\u002Bkup9CiNZJFCzqKqvzAZ7dcqqYnO3xcbmBks3l7jZXGY735z6/uJ3b6aq\u002By13ByOqcAf1OEKmIA5i3odRFAWt9RbrrXXWWk022lsrUxPTL6aqGq9lRGUafRt0NyocKI15QZVCCrrdDtu725Sh\u002BmGkGH333pdbv6ZRmeMDn/rexcMDGNIni8WMIhT8udfm8alTnGg8ubK3VH2b3\u002Bp1Uuibb/sQswcII0xBzRExRITjh2dZmH2eOZ8vd37L2wyennlMVFVELR5QIwwgf4epM1Y/yDvPfcCxsSdYb20P\u002B1CHOHPt3Zx8r0vQ\u002BDFUCkGcMjiiTiWOaCyeyDSvPf0\u002BO9vj/HjlGjdW/hgSJuc\u002B\u002B9o3N9a909kjBIkeWvx11AZ2DLwdjJYStKCeNmiurbFy/fL51Rs/LQIkL7361rnrvy/T6XSGVf7tyneaF3eat794MP7/XH8B2xWEIx/3/kYAAAAASUVORK5CYII=",
+              "WhenOpened": "2025-10-26T23:19:47.546Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Class1.cs",
+              "DocumentMoniker": "C:\\Users\\Windows\\Downloads\\ProyectosProgramcionItla\\C#\\Sis_Inmobiliaria.Core.Application\\Class1.cs",
+              "RelativeDocumentMoniker": "..\\Sis_Inmobiliaria.Core.Application\\Class1.cs",
+              "ToolTip": "C:\\Users\\Windows\\Downloads\\ProyectosProgramcionItla\\C#\\Sis_Inmobiliaria.Core.Application\\Class1.cs",
+              "RelativeToolTip": "..\\Sis_Inmobiliaria.Core.Application\\Class1.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-26T23:19:41.093Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Class1.cs",
+              "DocumentMoniker": "C:\\Users\\Windows\\Downloads\\ProyectosProgramcionItla\\C#\\P3_ACOSTA_SIS_INMOBILARIA\\Class1.cs",
+              "RelativeDocumentMoniker": "Class1.cs",
+              "ToolTip": "C:\\Users\\Windows\\Downloads\\ProyectosProgramcionItla\\C#\\P3_ACOSTA_SIS_INMOBILARIA\\Class1.cs",
+              "RelativeToolTip": "Class1.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-26T23:08:48.525Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
