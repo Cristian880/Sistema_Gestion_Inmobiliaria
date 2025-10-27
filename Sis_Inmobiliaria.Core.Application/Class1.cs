@@ -8,5 +8,6 @@ namespace Sis_Inmobiliaria.Core.Application
 {
     public class Class1
     {
+        
     }
 }

@@ -1,0 +1,20 @@
+# Archivos temporales de Visual Studio
+.vs/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Carpetas de compilación
+bin/
+obj/
+Debug/
+Release/
+
+# Archivos de bases de datos temporales
+*.db
+*.v17/
+*.vsidx
+
+# Otros
+[Bb]uild/
