@@ -54,5 +54,11 @@
     <Folder Include="Services\" />
     <Folder Include="ViewModels\" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Sis_Inmobiliaria.Core.Domain\Sis_Inmobiliaria.Core.Domain.csproj">
+      <Project>{47ea2661-5b4d-4b0f-9848-ebfc80fc6311}</Project>
+      <Name>Sis_Inmobiliaria.Core.Domain</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
