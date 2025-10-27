@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
-namespace Sis_Inmobiliaria.View.Pages
+namespace Sis_Inmobilaria.WebApp.Pages
 {
     public class IndexModel : PageModel
     {

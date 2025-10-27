@@ -1,4 +1,4 @@
-namespace Sis_Inmobiliaria.View
+namespace Sis_Inmobilaria.WebApp
 {
     public class Program
     {
