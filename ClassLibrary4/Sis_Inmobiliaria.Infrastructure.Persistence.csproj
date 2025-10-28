@@ -13,8 +13,6 @@
 	</ItemGroup>
 
 	<ItemGroup>
-    <Folder Include="Contexts\" />
-    <Folder Include="EntityConfigurations\" />
     <Folder Include="Migrations\" />
   </ItemGroup>
 
