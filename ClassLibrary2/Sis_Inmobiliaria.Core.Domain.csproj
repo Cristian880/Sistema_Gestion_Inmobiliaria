@@ -1,0 +1,17 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Remove="Interfaces\IGenericRepository.cs" />
+  </ItemGroup>
+
+	
+  <ItemGroup>
+    <None Include="Interfaces\IGenericRepository.cs" />
+  </ItemGroup>
+
+</Project>

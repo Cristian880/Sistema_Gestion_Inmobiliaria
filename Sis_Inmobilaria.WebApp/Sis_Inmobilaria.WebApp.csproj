@@ -21,13 +21,13 @@
     <Folder Include="Middlewares\" />
     <Folder Include="Views\" />
   </ItemGroup>
-
+	
   <ItemGroup>
-    <ProjectReference Include="..\Sis_Inmobiliaria.Core.Application\Sis_Inmobiliaria.Core.Application.csproj" />
-    <ProjectReference Include="..\Sis_Inmobiliaria.Core.Domain\Sis_Inmobiliaria.Core.Domain.csproj" />
-    <ProjectReference Include="..\Sis_Inmobiliaria.Infrastructure.Identity\Sis_Inmobiliaria.Infrastructure.Identity.csproj" />
-    <ProjectReference Include="..\Sis_Inmobiliaria.Infrastructure.Persistence\Sis_Inmobiliaria.Infrastructure.Persistence.csproj" />
-    <ProjectReference Include="..\Sis_Inmobiliaria.Infrastructure.Shared\Sis_Inmobiliaria.Infrastructure.Shared.csproj" />
+    <ProjectReference Include="..\ClassLibrary1\Sis_Inmobiliaria.Core.Application.csproj" />
+    <ProjectReference Include="..\ClassLibrary2\Sis_Inmobiliaria.Core.Domain.csproj" />
+    <ProjectReference Include="..\ClassLibrary3\Sis_Inmobiliaria.Infrastructure.Identity.csproj" />
+    <ProjectReference Include="..\ClassLibrary4\Sis_Inmobiliaria.Infrastructure.Persistence.csproj" />
+    <ProjectReference Include="..\ClassLibrary5\Sis_Inmobiliaria.Infrastructure.Shared.csproj" />
   </ItemGroup>
 
 </Project>
