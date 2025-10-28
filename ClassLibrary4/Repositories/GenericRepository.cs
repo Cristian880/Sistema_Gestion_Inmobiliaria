@@ -1,17 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Microsoft.EntityFrameworkCore;
+using Sis_Inmobiliaria.Infrastructure.Persistence.Contexts;
+
 
 namespace Sis_Inmobiliaria.Infrastructure.Persistence.Repositories
 {
     public class GenericRepository<Entity> : IGenericRepository<Entity>
         where Entity : class
     {
-        private readonly InvestmentAppContext _context;
+        private readonly Sis_InmobiliariaAppContext _context;
 
-        public GenericRepository(InvestmentAppContext context)
+        public GenericRepository(Sis_InmobiliariaAppContext context)
         {
             _context = context;
         }

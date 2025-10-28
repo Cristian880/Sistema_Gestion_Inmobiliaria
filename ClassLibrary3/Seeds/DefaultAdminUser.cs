@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
 using Sis_Inmobiliaria.Core.Domain.Common.Enums;
 using Sis_Inmobiliaria.Infrastructure.Identity.Entities;
 

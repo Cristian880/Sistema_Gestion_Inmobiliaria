@@ -1,11 +1,8 @@
 ﻿using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
 using Sis_Inmobiliaria.Core.Domain.Common.Enums;
 using Sis_Inmobiliaria.Infrastructure.Identity.Entities;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 
 namespace Sis_Inmobiliaria.Infrastructure.Identity.Seeds
 {

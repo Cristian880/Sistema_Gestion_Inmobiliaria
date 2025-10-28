@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.WebUtilities;
+using Microsoft.EntityFrameworkCore;
 using Sis_Inmobiliaria.Core.Application.Dtos.Email;
 using Sis_Inmobiliaria.Core.Application.Dtos.User;
 using Sis_Inmobiliaria.Core.Application.Interfaces;
