@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Sis_Inmobiliaria.Infrastructure.Persistence.Contexts;
+using Sis_Inmobiliaria.Core.Domain.Interfaces;
 
 
 namespace Sis_Inmobiliaria.Infrastructure.Persistence.Repositories

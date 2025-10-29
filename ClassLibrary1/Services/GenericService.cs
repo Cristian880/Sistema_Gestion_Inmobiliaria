@@ -1,5 +1,8 @@
 ﻿using AutoMapper;
 using Sis_Inmobiliaria.Core.Application.Interfaces;
+using Sis_Inmobiliaria.Core.Domain.Interfaces;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace Sis_Inmobiliaria.Core.Application.Services
 {
@@ -92,7 +95,7 @@ namespace Sis_Inmobiliaria.Core.Application.Services
             }
             catch (Exception)
             {
-                return [];
+                return new List<DtoModel>();
             }
         }
     }

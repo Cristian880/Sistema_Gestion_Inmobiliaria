@@ -4,7 +4,7 @@ using Sis_Inmobiliaria.Core.Application.Interfaces;
 using Sis_Inmobiliaria.Core.Domain.Settings;
 using Sis_Inmobiliaria.Infrastructure.Shared.Services;
 
-namespace ClassLibrary5
+namespace Sis_Inmobiliaria.Infrastructure.Shared
 {
     public static class ServicesRegistration
     {

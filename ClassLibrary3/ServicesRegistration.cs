@@ -8,7 +8,7 @@ using Sis_Inmobiliaria.Infrastructure.Identity.Entities;
 using Sis_Inmobiliaria.Infrastructure.Identity.Seeds;
 using Sis_Inmobiliaria.Infrastructure.Identity.Services;
 
-namespace ClassLibrary3
+namespace Sis_Inmobiliaria.Infrastructure.Identity
 {
     public static class ServicesRegistration
     {

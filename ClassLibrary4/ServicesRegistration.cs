@@ -5,7 +5,7 @@ using Sis_Inmobiliaria.Core.Domain.Interfaces;
 using Sis_Inmobiliaria.Infrastructure.Persistence.Contexts;
 using Sis_Inmobiliaria.Infrastructure.Persistence.Repositories;
 
-namespace ClassLibrary4
+namespace Sis_Inmobiliaria.Infrastructure.Persistence
 {
     public static class ServicesRegistration
     {
@@ -40,7 +40,7 @@ namespace ClassLibrary4
                 services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
                 services.AddScoped<IPropertyRepository, PropertyRepository>();
                 services.AddScoped<IPropertyTypeRepository, PropertyTypeRepository>();
-                
+
                 #endregion
             }
         }

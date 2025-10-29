@@ -12,10 +12,6 @@
 		<PackageReference Include="Microsoft.Extensions.Options.ConfigurationExtensions" Version="9.0.10" />
 	</ItemGroup>
 
-	<ItemGroup>
-    <Folder Include="Migrations\" />
-  </ItemGroup>
-
   <ItemGroup>
     <ProjectReference Include="..\ClassLibrary1\Sis_Inmobiliaria.Core.Application.csproj" />
     <ProjectReference Include="..\ClassLibrary2\Sis_Inmobiliaria.Core.Domain.csproj" />

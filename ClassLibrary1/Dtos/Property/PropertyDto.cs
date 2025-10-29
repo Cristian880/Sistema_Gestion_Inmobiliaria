@@ -1,14 +1,13 @@
-﻿using Sis_Inmobiliaria.Core.Domain.Common;
+﻿using Sis_Inmobiliaria.Core.Application.Dtos.PropertyType;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Reflection.Metadata;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Sis_Inmobiliaria.Core.Domain.Entities
+namespace Sis_Inmobiliaria.Core.Application.Dtos.Property
 {
-    public class Property : BasicEntity<int>
+    public class PropertyDto : BasicDto<int>
     {
         public required string Name { get; set; }
         public required string Direction { get; set; }
@@ -22,7 +21,7 @@ namespace Sis_Inmobiliaria.Core.Domain.Entities
 
         //relaciones
         public required int PropertyTypeId { get; set; } //FK
-        public PropertyType? PropertyType { get; set; }
+        public PropertyTypeDto? PropertyType { get; set; }
         public string? UserId { get; set; } //FK
     }
 }
