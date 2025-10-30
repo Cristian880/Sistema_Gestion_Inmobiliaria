@@ -20,6 +20,5 @@ namespace Sis_Inmobiliaria.Core.Application.ViewModels.User
             // aqui se utiliza AddScoped porque tambien se maneja por instancias del usuario
             #endregion
         }
-
     }
 }

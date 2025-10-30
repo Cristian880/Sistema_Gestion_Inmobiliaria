@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
-namespace Sis_Inmobilaria.WebApp.Pages
+namespace Sis_Inmobilaria.WebAppp.Pages
 {
     public class PrivacyModel : PageModel
     {
