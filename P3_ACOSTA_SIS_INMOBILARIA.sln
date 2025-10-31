@@ -28,8 +28,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		.gitignore = .gitignore
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sis_Inmobiliaria.Core.Domain", "Sis_Inmobiliaria.Core.Domainn\Sis_Inmobiliaria.Core.Domain.csproj", "{E03BAA7B-3796-42E3-AFF0-8C59E8BA7EB5}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sis_Inmobilaria.WebApp", "Sis_Inmobilaria.WebApp\Sis_Inmobilaria.WebApp.csproj", "{08AD0B73-7DA6-A5AD-EA77-4CD503479A86}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sis_Inmobiliaria.Infrastructure.Shared", "Sis_Inmobiliaria.Infrastructure.Shared\Sis_Inmobiliaria.Infrastructure.Shared.csproj", "{357E5277-AA25-F21E-843F-28C0A260FC1A}"
@@ -40,16 +38,14 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sis_Inmobiliaria.Infrastruc
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sis_Inmobiliaria.Core.Application", "Sis_Inmobiliaria.Core.Application\Sis_Inmobiliaria.Core.Application.csproj", "{3E22EEA5-E3AF-349B-79CE-A2817F9E8921}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sis_Inmobiliaria.Core.Domain", "Sis_Inmobiliaria.Core.Domain\Sis_Inmobiliaria.Core.Domain.csproj", "{CB1AA37F-D83A-D0B3-8BDD-6F3958F6EB13}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{E03BAA7B-3796-42E3-AFF0-8C59E8BA7EB5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{E03BAA7B-3796-42E3-AFF0-8C59E8BA7EB5}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{E03BAA7B-3796-42E3-AFF0-8C59E8BA7EB5}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{E03BAA7B-3796-42E3-AFF0-8C59E8BA7EB5}.Release|Any CPU.Build.0 = Release|Any CPU
 		{08AD0B73-7DA6-A5AD-EA77-4CD503479A86}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{08AD0B73-7DA6-A5AD-EA77-4CD503479A86}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{08AD0B73-7DA6-A5AD-EA77-4CD503479A86}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -70,6 +66,10 @@ Global
 		{3E22EEA5-E3AF-349B-79CE-A2817F9E8921}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3E22EEA5-E3AF-349B-79CE-A2817F9E8921}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3E22EEA5-E3AF-349B-79CE-A2817F9E8921}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CB1AA37F-D83A-D0B3-8BDD-6F3958F6EB13}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CB1AA37F-D83A-D0B3-8BDD-6F3958F6EB13}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CB1AA37F-D83A-D0B3-8BDD-6F3958F6EB13}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CB1AA37F-D83A-D0B3-8BDD-6F3958F6EB13}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -84,12 +84,12 @@ Global
 		{0855F937-246E-4C89-931F-6F0CFEDCB8F7} = {DAECE477-9FFA-4B1B-A00B-6BEAAF226425}
 		{700AE46B-4315-4927-85A5-E9BD18316747} = {DAECE477-9FFA-4B1B-A00B-6BEAAF226425}
 		{7EC389AB-1C2D-4B0E-A503-AA4BF5F2427F} = {458089BF-735A-41FC-B4C0-50EFA102ECB3}
-		{E03BAA7B-3796-42E3-AFF0-8C59E8BA7EB5} = {AB7FE942-488B-4C88-8C73-2E49EA47F2B8}
 		{08AD0B73-7DA6-A5AD-EA77-4CD503479A86} = {7EC389AB-1C2D-4B0E-A503-AA4BF5F2427F}
 		{357E5277-AA25-F21E-843F-28C0A260FC1A} = {700AE46B-4315-4927-85A5-E9BD18316747}
 		{726F4F2C-188B-87E0-5B8F-358C993B2561} = {0855F937-246E-4C89-931F-6F0CFEDCB8F7}
 		{AC9471B3-2DA1-A0DA-0EC5-D2E4D1AE9FB7} = {C78532B4-423B-4B1F-990F-977E592406DA}
 		{3E22EEA5-E3AF-349B-79CE-A2817F9E8921} = {C7934D4B-EA2C-4F67-8C62-5060AC44079D}
+		{CB1AA37F-D83A-D0B3-8BDD-6F3958F6EB13} = {AB7FE942-488B-4C88-8C73-2E49EA47F2B8}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {1D78B28E-7048-484D-874F-05F54CC8BB63}
