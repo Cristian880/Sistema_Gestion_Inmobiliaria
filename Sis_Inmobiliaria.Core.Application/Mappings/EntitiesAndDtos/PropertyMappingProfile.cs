@@ -13,8 +13,6 @@ namespace Sis_Inmobiliaria.Core.Application.Mappings.EntitiesAndDtos
              .ReverseMap()
              .ForMember(dest => dest.PropertyType, opt => opt.Ignore());
 
-             CreateMap<Property, PropertyDto>()
-             .ReverseMap();
          }
      }
 }

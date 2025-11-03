@@ -15,10 +15,15 @@ namespace Sis_Inmobiliaria.Core.Application.Mappings.DtosAndViewModels
              .ForMember(dest => dest.Properties, opt => opt.Ignore());
 
              CreateMap<PropertyTypeDto, SavePropertyTypeViewModel>()
-             .ReverseMap();
+             .ReverseMap()
+                 .ForMember(dest => dest.Properties, opt => opt.Ignore());
 
              CreateMap<PropertyTypeDto, DeletePropertyTypeViewModel>()
-             .ReverseMap();
+             .ReverseMap()
+                 .ForMember(dest => dest.Name, opt => opt.Ignore())
+                 .ForMember(dest => dest.Active, opt => opt.Ignore())
+                 .ForMember(dest => dest.Description, opt => opt.Ignore())
+                 .ForMember(dest => dest.Properties, opt => opt.Ignore());
          }
      }
 }

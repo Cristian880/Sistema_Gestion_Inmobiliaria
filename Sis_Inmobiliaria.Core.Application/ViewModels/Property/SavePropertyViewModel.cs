@@ -29,6 +29,11 @@ namespace Sis_Inmobiliaria.Core.Application.ViewModels.Property
         [Required(ErrorMessage = "Debe introducir una descripcion")]
         [DataType(DataType.Text)]
         public required string Description { get; set; }
+
+        //[Required(ErrorMessage = "Debe introducir una fecha de publicacion")]
+        //[DataType(DataType.Text)]
+        public required DateTime PropertyPublicacionDate { get; set; } = DateTime.UtcNow;
+
         [DataType(DataType.Text)]
         public required bool Active { get; set; }
 

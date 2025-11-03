@@ -18,6 +18,7 @@ namespace Sis_Inmobiliaria.Core.Domain.Entities
 
         //Datos que se mostraran cuando se precione la odcion de detalles de la propiedad
         public required string Description { get; set; }
+        public required DateTime PropertyPublicacionDate { get; set; }
         public required bool Active { get; set; }
 
         //relaciones
