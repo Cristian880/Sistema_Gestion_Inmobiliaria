@@ -1,10 +1,4 @@
 ﻿using Sis_Inmobiliaria.Core.Domain.Common;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Reflection.Metadata;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Sis_Inmobiliaria.Core.Domain.Entities
 {

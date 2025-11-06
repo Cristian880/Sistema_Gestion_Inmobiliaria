@@ -1,5 +1,4 @@
 ﻿using Sis_Inmobiliaria.Core.Domain.Common;
-using System.Collections;
 
 namespace Sis_Inmobiliaria.Core.Domain.Entities
 {

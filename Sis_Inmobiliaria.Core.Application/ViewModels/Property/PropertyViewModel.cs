@@ -1,5 +1,3 @@
-using System.Collections.Generic;
-using Sis_Inmobiliaria.Core.Application.ViewModels;
 using Sis_Inmobiliaria.Core.Application.ViewModels.PropertyType;
 
 namespace Sis_Inmobiliaria.Core.Application.ViewModels.Property
