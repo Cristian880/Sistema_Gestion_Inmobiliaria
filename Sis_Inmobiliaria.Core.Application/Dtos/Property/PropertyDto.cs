@@ -7,7 +7,7 @@ namespace Sis_Inmobiliaria.Core.Application.Dtos.Property
         public required string Name { get; set; }
         public required string Direction { get; set; }
         public required double Price { get; set; }
-        public required float size { get; set; }
+        public required float Size { get; set; }
         public string? PropertyImage { get; set; }
         //public required string PropertyBusisnessType { get; set; }
 

@@ -6,7 +6,7 @@
 
 <div class="col-12 col-md-6 offset-md-3 ">
     <div class="card">
-        <div class="card-header bg-success text-light"><h5 class="text-center">@(editMode ? "Edit - " + Model.Name : "New Property")</h5></div>
+        <div class="card-header bg-success text-light"><h5 class="text-center">@(editMode ? "Edit - " + Model.Name : "New Property ")</h5></div>
         <div class="card-body">
             <form asp-controller="Asset" asp-action="@(editMode ? "Edit" : "Create")" method="POST">
                 <input type="hidden" asp-for="Id" />

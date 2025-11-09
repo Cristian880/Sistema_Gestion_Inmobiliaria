@@ -17,6 +17,8 @@
 
 	<ItemGroup>
 		<Folder Include="Middlewares\" />
+		<Folder Include="wwwroot\Images\Properties\" />
+		<Folder Include="wwwroot\Images\Users\" />
 	</ItemGroup>
 
 	<ItemGroup>
