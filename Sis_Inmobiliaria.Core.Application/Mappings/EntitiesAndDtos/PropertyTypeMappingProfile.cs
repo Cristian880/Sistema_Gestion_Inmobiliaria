@@ -9,9 +9,9 @@ namespace Sis_Inmobiliaria.Core.Application.Mappings.EntitiesAndDtos
          public PropertyTypeMappingProfile()
          {
              CreateMap<PropertyType, PropertyTypeDto>()
-             .ForMember(dest => dest.Properties, opt => opt.MapFrom(src => src.properties))
+             .ForMember(dest => dest.Properties, opt => opt.MapFrom(src => src.Properties))
              .ReverseMap()
-             .ForMember(dest => dest.properties, opt => opt.Ignore());
+             .ForMember(dest => dest.Properties, opt => opt.Ignore());
          }
      }
 }

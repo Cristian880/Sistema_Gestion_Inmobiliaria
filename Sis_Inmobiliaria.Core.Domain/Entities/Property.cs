@@ -6,8 +6,8 @@ namespace Sis_Inmobiliaria.Core.Domain.Entities
     {
         public required string Name { get; set; }
         public required string Direction { get; set; }
-        public required double price { get; set; }
-        public required float size { get; set; }
+        public required double Price { get; set; }
+        public required float Size { get; set; }
         public string? PropertyImage { get; set; }
 
         //Datos que se mostraran cuando se precione la odcion de detalles de la propiedad

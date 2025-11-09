@@ -1,21 +1,21 @@
 using AutoMapper;
-using Sis_Inmobiliaria.Core.Application.Dtos.PropertyType;
-using Sis_Inmobiliaria.Core.Application.ViewModels.PropertyType;
+using Sis_Inmobiliaria.Core.Application.Dtos.PropertyTypeType;
+using Sis_Inmobiliaria.Core.Application.ViewModels.PropertyTypeType;
 
 namespace Sis_Inmobiliaria.Core.Application.Mappings.DtosAndViewModels
 {
- public class PropertyTypeDtoMappingProfile : Profile
+ public class PropertyTypeTypeDtoMappingProfile : Profile
  {
- public PropertyTypeDtoMappingProfile()
+ public PropertyTypeTypeDtoMappingProfile()
  {
- CreateMap<PropertyTypeDto, PropertyTypeViewModel>()
+ CreateMap<PropertyTypeTypeDto, PropertyTypeTypeViewModel>()
  .ForMember(dest => dest.properties, opt => opt.MapFrom(src => src.Properties))
  .ReverseMap();
 
- CreateMap<PropertyTypeDto, SavePropertyTypeViewModel>()
+ CreateMap<PropertyTypeTypeDto, SavePropertyTypeTypeViewModel>()
  .ReverseMap();
 
- CreateMap<PropertyTypeDto, DeletePropertyTypeViewModel>()
+ CreateMap<PropertyTypeTypeDto, DeletePropertyTypeTypeViewModel>()
  .ReverseMap()
  .ForAllMembers(opt => opt.Ignore())
  .ForMember(dest => dest.Id, opt => opt.MapFrom(src => src.Id));

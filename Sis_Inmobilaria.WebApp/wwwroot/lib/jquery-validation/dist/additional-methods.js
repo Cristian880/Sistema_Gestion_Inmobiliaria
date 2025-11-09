@@ -940,11 +940,11 @@ $.validator.addMethod( "maxsizetotal", function( value, element, param ) {
 
 	if ( $( element ).attr( "type" ) === "file" ) {
 		if ( element.files && element.files.length ) {
-			var totalSize = 0;
+			var totalsize = 0;
 
 			for ( var i = 0; i < element.files.length; i++ ) {
-				totalSize += element.files[ i ].size;
-				if ( totalSize > param ) {
+				totalsize += element.files[ i ].size;
+				if ( totalsize > param ) {
 					return false;
 				}
 			}

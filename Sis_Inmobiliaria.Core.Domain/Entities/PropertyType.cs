@@ -8,6 +8,6 @@ namespace Sis_Inmobiliaria.Core.Domain.Entities
         public required string Description { get; set; }
         public required bool Active { get; set; }
 
-        public ICollection<Property>? properties { get; set; }
+        public ICollection<Property>? Properties { get; set; }
     }
 }

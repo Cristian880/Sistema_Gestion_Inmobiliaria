@@ -3,8 +3,9 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Sis_Inmobiliaria.Core.Application.ViewModels.User
 {
-    public class UpdateUserViewModel : BasicViewModel<int>
+    public class UpdateUserViewModel
     {
+        public required string Id { get; set; }
 
         [Required(ErrorMessage = "You must enter the name of user")]
         [DataType(DataType.Text)]
@@ -35,7 +36,7 @@ namespace Sis_Inmobiliaria.Core.Application.ViewModels.User
         [DataType(DataType.Upload)]
         public IFormFile? ProfileImageFile { get; set; }
 
-        [Range(1, int.MaxValue, ErrorMessage = "You must enter the valid role of user")]
-        public required int Role { get; set; }
+        [Required(ErrorMessage = "You must enter the valid role of user")]
+        public required string Role { get; set; }
     }
 }

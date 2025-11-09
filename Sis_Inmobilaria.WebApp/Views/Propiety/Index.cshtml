@@ -1,0 +1,53 @@
+﻿@model List<PropertyViewModel>;
+@{
+    ViewData["Title"] = "Propieties";
+}
+
+<div class="row">
+    <div class="text-center">
+        <h1 class="display-4">Propieties</h1>
+    </div>
+</div>
+
+<div class="row mt-4">
+    <div class="col-12 col-md-3">
+        <a class="btn btn-outline-success" asp-controller="Property" asp-action="Create"><i class="bi bi-file-earmark-plus"></i> New Property</a>
+    </div>
+
+</div>
+
+<div class="row mt-2">
+    @if (Model.Count == 0)
+    {
+        <div class="text-center">
+            <h4 class="display-4">There aren't propieties</h4>
+        </div>
+    }
+    else
+    {
+        foreach (var item in Model)
+        {
+            <div class="col-12 col-md-3">
+                <div class="card">
+                    <img src="@item.PropertyImage" class="card-img-top responsive-image" alt="@item.Name">
+                    <div class="card-body">
+                        <h5 class="card-title">@item.Name </h5>
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">Direction: @item.Direction</li>
+                        <li class="list-group-item">Price: @item.Price</li>
+                    </ul>
+                    <div class="card-body">
+                        <a class="btn btn-outline-danger float-end me-2" asp-controller="Property" asp-action="Details" asp-route-id="@item.Id"><i class="bi bi-trash"></i> Details</a>
+                        <a class="btn btn-outline-danger float-end me-2" asp-controller="Property" asp-action="Delete" asp-route-id="@item.Id"><i class="bi bi-trash"></i> Delete</a>
+                        <a class="btn btn-outline-danger float-end me-2" asp-controller="Property" asp-action="Save" asp-route-id="@item.Id"><i class="bi bi-trash"></i> Edit</a>
+
+                    </div>
+                </div>
+            </div>
+        }
+    }
+</div>
+
+
+

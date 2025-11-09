@@ -20,7 +20,7 @@ namespace Sis_Inmobiliaria.Infrastructure.Persistence.EntityConfigurations
             #endregion
 
             #region relationships
-            builder.HasMany(pt => pt.properties)
+            builder.HasMany(pt => pt.Properties)
                 .WithOne(p => p.PropertyType)
                 .HasForeignKey(p => p.PropertyTypeId)
                 .OnDelete(DeleteBehavior.Cascade);

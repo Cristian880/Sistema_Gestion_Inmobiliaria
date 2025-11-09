@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace P3_ACOSTA_SIS_INMOBILARIA
+namespace P3_ACOSTA_Sis_Inmobiliaria
 {
     public class Class1
     {

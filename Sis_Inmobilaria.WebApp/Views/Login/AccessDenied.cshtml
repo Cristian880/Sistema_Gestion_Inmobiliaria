@@ -1,0 +1,20 @@
+﻿@using Sis_Inmobiliaria.Core.Domain.Common.Enums
+@using Sis_Inmobiliaria.Core.Application.Interfaces
+
+
+@{
+    ViewData["Title"] = "Access denied";
+    bool isAdmin = true;
+
+    if (!string.IsNullOrWhiteSpace(ViewBag.CurrentRol) && ViewBag.CurrentRol == Roles.GeneralPublic.ToString())
+    {
+        isAdmin = false;
+        Layout = "_LayoutGeneralPublic";
+    }
+    
+}
+
+<div class="text-center">
+    <h1 class="display-4">Access denied</h1>
+    <p> Your user does not have permission to access this section - <a asp-controller="@(isAdmin ? "Home" : "GeneralPublic")" asp-action="Index"><i class="bi bi-house-door"></i> Home</a> </p>
+</div>

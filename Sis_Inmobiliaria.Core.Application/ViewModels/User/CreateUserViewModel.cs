@@ -1,8 +1,7 @@
 ﻿using Microsoft.AspNetCore.Http;
-using Sis_Inmobiliaria.Core.Application.ViewModels;
 using System.ComponentModel.DataAnnotations;
 
-namespace InvestmentApp.Core.Application.ViewModels.User
+namespace Sis_Inmobiliaria.Core.Application.ViewModels.User
 {
     public class CreateUserViewModel : BasicViewModel<int>
     {
@@ -40,6 +39,6 @@ namespace InvestmentApp.Core.Application.ViewModels.User
         public IFormFile? ProfileImageFile { get; set; }
 
         [Range(1, int.MaxValue, ErrorMessage = "You must enter the valid role of user")]
-        public required int Role { get; set; }
+        public required string Role { get; set; }
     }
 }

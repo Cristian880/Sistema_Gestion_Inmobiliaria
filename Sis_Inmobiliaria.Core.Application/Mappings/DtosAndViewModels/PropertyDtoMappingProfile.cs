@@ -22,7 +22,7 @@ namespace Sis_Inmobiliaria.Core.Application.Mappings.DtosAndViewModels
             .ReverseMap()
             .ForMember(dest => dest.PropertyType, opt => opt.Ignore())
             .ForMember(dest => dest.Description, opt => opt.Ignore())
-            .ForMember(dest => dest.price, opt => opt.Ignore())
+            .ForMember(dest => dest.Price, opt => opt.Ignore())
             .ForMember(dest => dest.PropertyTypeId, opt => opt.Ignore())
             .ForMember(dest => dest.Name, opt => opt.Ignore())
             .ForMember(dest => dest.Active, opt => opt.Ignore())

@@ -9,17 +9,14 @@
 	<ItemGroup>
 		<PackageReference Include="Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation" Version="9.0.10" />
 		<PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="9.0.10">
-			<PrivateAssets>all</PrivateAssets>
-			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+			<PrivatePropertys>all</PrivatePropertys>
+			<IncludePropertys>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludePropertys>
 		</PackageReference>
 		<PackageReference Include="Tesseract" Version="5.2.0" />
 	</ItemGroup>
 
 	<ItemGroup>
-		<Folder Include="Controllers\" />
 		<Folder Include="Middlewares\" />
-		<Folder Include="Helpers\" />
-		<Folder Include="Views\" />
 	</ItemGroup>
 
 	<ItemGroup>

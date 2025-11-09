@@ -1,18 +1,18 @@
 using AutoMapper;
-using Sis_Inmobiliaria.Core.Application.Dtos.Property;
+using Sis_Inmobiliaria.Core.Application.Dtos.PropertyType;
 using Sis_Inmobiliaria.Core.Domain.Entities;
 using System.Linq;
 
 namespace Sis_Inmobiliaria.Core.Application.Mappings.EntitiesAndDtos
 {
- public class PropertyMappingProfile : Profile
+ public class PropertyTypeMappingProfile : Profile
  {
- public PropertyMappingProfile()
+ public PropertyTypeMappingProfile()
  {
- CreateMap<Property, PropertyDto>()
- .ForMember(dest => dest.PropertyType, opt => opt.MapFrom(src => src.PropertyType))
+ CreateMap<PropertyType, PropertyTypeDto>()
+ .ForMember(dest => dest.PropertyTypeType, opt => opt.MapFrom(src => src.PropertyTypeType))
  .ReverseMap()
- .ForMember(dest => dest.PropertyType, opt => opt.Ignore());
+ .ForMember(dest => dest.PropertyTypeType, opt => opt.Ignore());
  }
  }
 }

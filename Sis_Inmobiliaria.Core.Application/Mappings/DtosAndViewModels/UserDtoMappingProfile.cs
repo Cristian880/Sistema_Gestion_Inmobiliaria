@@ -1,5 +1,4 @@
 ﻿using AutoMapper;
-using InvestmentApp.Core.Application.ViewModels.User;
 using Sis_Inmobiliaria.Core.Application.Dtos.User;
 using Sis_Inmobiliaria.Core.Application.ViewModels.User;
 

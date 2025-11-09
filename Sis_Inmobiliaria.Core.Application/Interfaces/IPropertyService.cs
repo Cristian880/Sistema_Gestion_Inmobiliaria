@@ -4,6 +4,7 @@ namespace Sis_Inmobiliaria.Core.Application.Interfaces
 {
     public interface IPropertyService : IGenericService<PropertyDto>
     {
-        Task<List<PropertyDto>> GetAllWithIncludeByUser(int userId);
+        Task<List<PropertyDto>> GetAllWithInclude();
+        Task<List<PropertyDto>> GetAllByUserIdAsync(string userId);
     }
 }

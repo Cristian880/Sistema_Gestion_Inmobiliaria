@@ -3,7 +3,7 @@ using Sis_Inmobiliaria.Infrastructure.Identity;
 using Sis_Inmobiliaria.Infrastructure.Persistence;
 using Sis_Inmobiliaria.Infrastructure.Shared;
 
-namespace Sis_Inmobilaria.WebApp
+namespace Sis_Inmobiliaria.WebApp
 {
     public class Program
     {
@@ -44,14 +44,14 @@ namespace Sis_Inmobilaria.WebApp
             app.UseAuthentication();
             app.UseAuthorization();
 
-            app.MapStaticAssets();
+            app.MapStaticPropertys();
             app.MapRazorPages()
-               .WithStaticAssets();
+               .WithStaticPropertys();
 
             app.MapControllerRoute(
             name: "default",
             pattern: "{controller=Login}/{action=Index}/{id?}")
-            .WithStaticAssets();
+            .WithStaticPropertys();
 
             app.Run();
         }

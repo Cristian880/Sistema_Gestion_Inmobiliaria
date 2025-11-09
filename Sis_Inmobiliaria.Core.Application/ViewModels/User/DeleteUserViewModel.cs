@@ -1,7 +1,8 @@
 ﻿namespace Sis_Inmobiliaria.Core.Application.ViewModels.User
 {
-    public class DeleteUserViewModel : BasicViewModel<int>
+    public class DeleteUserViewModel 
     {      
+        public required string Id { get; set; }
         public string? Name { get; set; }
         public string? LastName { get; set; }
     }

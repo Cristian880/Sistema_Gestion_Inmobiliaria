@@ -1,38 +1,41 @@
 ﻿using AutoMapper;
+using Microsoft.Extensions.Logging;
 using Sis_Inmobiliaria.Core.Application.Interfaces;
 using Sis_Inmobiliaria.Core.Domain.Interfaces;
-using System.Collections.Generic;
-using System.Threading.Tasks;
 
 namespace Sis_Inmobiliaria.Core.Application.Services
 {
-    public class GenericService<Entity, DtoModel> : IGenericService<DtoModel>
+    public class GenericService<Entity, DtoModel>(
+        IGenericRepository<Entity> repository, 
+        IMapper mapper,
+        ILogger<GenericService<Entity, DtoModel>> logger) : IGenericService<DtoModel>
         where Entity : class
         where DtoModel : class
     {
-        private readonly IGenericRepository<Entity> _repository;
-        private readonly IMapper _mapper;
+        //private readonly IGenericRepository<Entity> _repository;
+        //private readonly IMapper _mapper;
 
-        public GenericService(IGenericRepository<Entity> repository, IMapper mapper)
-        {
-            _repository = repository;
-            _mapper = mapper;
-        }
+        //public GenericService(IGenericRepository<Entity> repository, IMapper mapper)
+        //{
+        //    _repository = repository;
+        //    _mapper = mapper;
+        //}
         public virtual async Task<DtoModel?> AddAsync(DtoModel dto)
         {
             try
             {
-                Entity entity = _mapper.Map<Entity>(dto);
-                Entity? returnEntity = await _repository.AddAsync(entity);
+                Entity entity = mapper.Map<Entity>(dto);
+                Entity? returnEntity = await repository.AddAsync(entity);
                 if (returnEntity == null)
                 {
                     return null;
                 }
 
-                return _mapper.Map<DtoModel>(returnEntity);
+                return mapper.Map<DtoModel>(returnEntity);
             }
-            catch (Exception)
+            catch (Exception ex)
             {
+                logger.LogError(ex, "Error al agregar la entidad {EntityName}", typeof(Entity).Name);
                 return null;
             }
         }
@@ -40,17 +43,18 @@ namespace Sis_Inmobiliaria.Core.Application.Services
         {
             try
             {
-                Entity entity = _mapper.Map<Entity>(dto);
-                Entity? returnEntity = await _repository.UpdateAsync(id, entity);
+                Entity entity = mapper.Map<Entity>(dto);
+                Entity? returnEntity = await repository.UpdateAsync(id, entity);
                 if (returnEntity == null)
                 {
                     return null;
                 }
 
-                return _mapper.Map<DtoModel>(returnEntity);
+                return mapper.Map<DtoModel>(returnEntity);
             }
-            catch (Exception)
+            catch (Exception ex)
             {
+                logger.LogError(ex, "Error al actualizar la entidad {EntityName} con Id {Id}", typeof(Entity).Name, id);
                 return null;
             }
         }
@@ -58,11 +62,12 @@ namespace Sis_Inmobiliaria.Core.Application.Services
         {
             try
             {
-                await _repository.DeleteAsync(id);
+                await repository.DeleteAsync(id);
                 return true;
             }
-            catch (Exception)
+            catch (Exception ex)
             {
+                logger.LogError(ex, "Error al eliminar la entidad {EntityName} con Id {Id}", typeof(Entity).Name, id);
                 return false;
             }
         }
@@ -70,17 +75,18 @@ namespace Sis_Inmobiliaria.Core.Application.Services
         {
             try
             {
-                var entity = await _repository.GetById(id);
+                var entity = await repository.GetById(id);
                 if (entity == null)
                 {
                     return null;
                 }
 
-                DtoModel dto = _mapper.Map<DtoModel>(entity);
+                DtoModel dto = mapper.Map<DtoModel>(entity);
                 return dto;
             }
-            catch (Exception)
+            catch (Exception ex)
             {
+                logger.LogError(ex, "Error al obtener la entidad {EntityName} por Id {Id}", typeof(Entity).Name, id);
                 return null;
             }
         }
@@ -88,14 +94,16 @@ namespace Sis_Inmobiliaria.Core.Application.Services
         {
             try
             {
-                var listEntities = await _repository.GetAllList();
-                var listEntityDtos = _mapper.Map<List<DtoModel>>(listEntities);
+                var listEntities = await repository.GetAllList();
+                var listEntityDtos = mapper.Map<List<DtoModel>>(listEntities);
 
                 return listEntityDtos;
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                return new List<DtoModel>();
+                logger.LogError(ex, "Error al obtener todas las entidades {EntityName}", typeof(Entity).Name);
+                // 5. Advertencia de estilo corregida
+                return [];
             }
         }
     }

@@ -6312,7 +6312,7 @@ var rboxStyle = new RegExp( cssExpand.join( "|" ), "i" );
 		// Support: Chrome <=64
 		// Don't get tricked when zoom affects offsetWidth (gh-4029)
 		div.style.position = "absolute";
-		scrollboxSizeVal = roundPixelMeasures( div.offsetWidth / 3 ) === 12;
+		scrollboxsizeVal = roundPixelMeasures( div.offsetWidth / 3 ) === 12;
 
 		documentElement.removeChild( container );
 
@@ -6325,7 +6325,7 @@ var rboxStyle = new RegExp( cssExpand.join( "|" ), "i" );
 		return Math.round( parseFloat( measure ) );
 	}
 
-	var pixelPositionVal, boxSizingReliableVal, scrollboxSizeVal, pixelBoxStylesVal,
+	var pixelPositionVal, boxSizingReliableVal, scrollboxsizeVal, pixelBoxStylesVal,
 		reliableTrDimensionsVal, reliableMarginLeftVal,
 		container = document.createElement( "div" ),
 		div = document.createElement( "div" );
@@ -6358,9 +6358,9 @@ var rboxStyle = new RegExp( cssExpand.join( "|" ), "i" );
 			computeStyleTests();
 			return reliableMarginLeftVal;
 		},
-		scrollboxSize: function() {
+		scrollboxsize: function() {
 			computeStyleTests();
-			return scrollboxSizeVal;
+			return scrollboxsizeVal;
 		},
 
 		// Support: IE 9 - 11+, Edge 15 - 18+
@@ -6924,11 +6924,11 @@ jQuery.each( [ "height", "width" ], function( _i, dimension ) {
 
 				// Only read styles.position if the test has a chance to fail
 				// to avoid forcing a reflow.
-				scrollboxSizeBuggy = !support.scrollboxSize() &&
+				scrollboxsizeBuggy = !support.scrollboxsize() &&
 					styles.position === "absolute",
 
 				// To avoid forcing a reflow, only fetch boxSizing if we need it (gh-3991)
-				boxSizingNeeded = scrollboxSizeBuggy || extra,
+				boxSizingNeeded = scrollboxsizeBuggy || extra,
 				isBorderBox = boxSizingNeeded &&
 					jQuery.css( elem, "boxSizing", false, styles ) === "border-box",
 				subtract = extra ?
@@ -6943,7 +6943,7 @@ jQuery.each( [ "height", "width" ], function( _i, dimension ) {
 
 			// Account for unreliable border-box dimensions by comparing offset* to computed and
 			// faking a content-box to get border and padding (gh-3699)
-			if ( isBorderBox && scrollboxSizeBuggy ) {
+			if ( isBorderBox && scrollboxsizeBuggy ) {
 				subtract -= Math.ceil(
 					elem[ "offset" + dimension[ 0 ].toUpperCase() + dimension.slice( 1 ) ] -
 					parseFloat( styles[ dimension ] ) -

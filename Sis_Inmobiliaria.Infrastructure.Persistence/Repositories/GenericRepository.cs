@@ -70,7 +70,7 @@ namespace Sis_Inmobiliaria.Infrastructure.Persistence.Repositories
         }
         public virtual IQueryable<Entity> GetAllQuery()
         {
-            return _context.Set<Entity>().AsQueryable();//select * from assetsType // where join //deferred execution
+            return _context.Set<Entity>().AsQueryable();//select * from PropertysType // where join //deferred execution
         }
         public virtual IQueryable<Entity> GetAllQueryWithInclude(List<string> properties)
         {
