@@ -11,9 +11,16 @@
 
 <div class="row mt-4">
     <div class="col-12 col-md-3">
-        <a class="btn btn-outline-success" asp-controller="Property" asp-action="Create"><i class="bi bi-file-earmark-plus"></i> New Property</a>
+        <a class="btn btn-outline-success" asp-controller="Property" asp-action="Create">
+            <i class="bi bi-file-earmark-plus"></i> New Property
+        </a>
     </div>
-
+    @if (User.IsInRole("Admin"))
+    {
+        <a class="btn btn-outline-secondary ms-2" asp-controller="Property" asp-action="InactiveProperties">
+            <i class="bi bi-archive"></i> View Inactive Properties
+        </a>
+    }
 </div>
 
 <div class="row mt-2">
@@ -29,7 +36,7 @@
         {
             <div class="col-12 col-md-3">
                 <div class="card">
-                    <img src="@item.PropertyImage" class="card-img-top responsive-image" alt="@item.Name">
+                    <img src="@item.PropertyImage" class="card-img-top responsive-image" alt="@item.Name"> 
                     <div class="card-body">
                         <h5 class="card-title">@item.Name </h5>
                     </div>
@@ -38,9 +45,9 @@
                         <li class="list-group-item">Price: @item.Price</li>
                     </ul>
                     <div class="card-body">
-                        <a class="btn btn-outline-danger float-end me-2" asp-controller="Property" asp-action="Details" asp-route-id="@item.Id"><i class="bi bi-trash"></i> Details</a>
+                        <a class="btn btn-outline-info float-end me-2" asp-controller="Property" asp-action="Details" asp-route-id="@item.Id"><i class="bi bi-trash"></i> Details</a>
                         <a class="btn btn-outline-danger float-end me-2" asp-controller="Property" asp-action="Delete" asp-route-id="@item.Id"><i class="bi bi-trash"></i> Delete</a>
-                        <a class="btn btn-outline-danger float-end me-2" asp-controller="Property" asp-action="Save" asp-route-id="@item.Id"><i class="bi bi-trash"></i> Edit</a>
+                        <a class="btn btn-outline-warning float-end me-2" asp-controller="Property" asp-action="Edit" asp-route-id="@item.Id"><i class="bi bi-trash"></i> Edit</a>
 
                     </div>
                 </div>

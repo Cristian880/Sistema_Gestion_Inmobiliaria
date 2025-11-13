@@ -7,7 +7,7 @@ namespace Sis_Inmobiliaria.WebApp
 {
     public class Program
     {
-        public static void Main(string[] args)
+        public static async Task Main(string[] args)
         {
             var builder = WebApplication.CreateBuilder(args);
 
@@ -44,15 +44,29 @@ namespace Sis_Inmobiliaria.WebApp
             app.UseAuthentication();
             app.UseAuthorization();
 
-            app.MapStaticPropertys();
+            app.MapStaticAssets();
             app.MapRazorPages()
-               .WithStaticPropertys();
+               .WithStaticAssets();
 
             app.MapControllerRoute(
             name: "default",
             pattern: "{controller=Login}/{action=Index}/{id?}")
-            .WithStaticPropertys();
+            .WithStaticAssets();
 
+            using (var scope = app.Services.CreateScope())
+            {
+                var serviceProvider = scope.ServiceProvider;
+                try
+                {
+                    await serviceProvider.RunIdentitySeedAsync();
+                }
+                catch (Exception ex)
+                {
+                    var logger = serviceProvider.GetRequiredService<ILogger<Program>>();
+                    logger.LogError(ex, "Error al ejecutar los seeds de Identity.");
+
+                }
+            }
             app.Run();
         }
     }

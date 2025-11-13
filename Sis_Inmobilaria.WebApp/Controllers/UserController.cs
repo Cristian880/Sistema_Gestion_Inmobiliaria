@@ -10,17 +10,17 @@ using Sis_Inmobiliaria.Core.Application.Interfaces;
 namespace Sis_Inmobiliaria.WebApp.Controllers
 {
     [Authorize(Roles = "Admin")]
-    public class UserController(IAccountServiceForWebApp _accountServiceForWebApp, RoleManager<IdentityRole> _roleManager) : Controller
+    public class UserController : Controller//(IAccountServiceForWebApp _accountServiceForWebApp, RoleManager<IdentityRole> _roleManager) : Controller
     {
-        //private readonly IAccountServiceForWebApp _accountServiceForWebApp;
-        //private readonly RoleManager<IdentityRole> _roleManager;
+    private readonly IAccountServiceForWebApp _accountServiceForWebApp;
+    private readonly RoleManager<IdentityRole> _roleManager;
 
-        //public UserController(IAccountServiceForWebApp accountServiceForWebApp, RoleManager<IdentityRole> roleManager)
-        //{
-        //    _accountServiceForWebApp = accountServiceForWebApp;
-        //    _roleManager = roleManager;
-        //}
-        public async Task<IActionResult> Index()
+    public UserController(IAccountServiceForWebApp accountServiceForWebApp, RoleManager<IdentityRole> roleManager)
+    {
+        _accountServiceForWebApp = accountServiceForWebApp;
+        _roleManager = roleManager;
+    }
+    public async Task<IActionResult> Index()
         {
             var dtos = await _accountServiceForWebApp.GetAllUser(false);
 

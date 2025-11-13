@@ -36,7 +36,7 @@ namespace Sis_Inmobiliaria.WebApp.Controllers
                 }
                 else if (user != null && user.Role == Roles.GeneralPublic.ToString())
                 {
-                    return RedirectToRoute(new { controller = "GeneralPublicHome", action = "Index" });
+                    return RedirectToRoute(new { controller = "GeneralPublic", action = "Index" });
                 }
             }
 
@@ -58,7 +58,7 @@ namespace Sis_Inmobiliaria.WebApp.Controllers
                 }
                 else if (user != null && user.Role == Roles.GeneralPublic.ToString())
                 {
-                    return RedirectToRoute(new { controller = "GeneralPublicHome", action = "Index" });
+                    return RedirectToRoute(new { controller = "GeneralPublic", action = "Index" });
                 }
             }
 
@@ -82,7 +82,7 @@ namespace Sis_Inmobiliaria.WebApp.Controllers
                     return RedirectToRoute(new { controller = "Home", action = "Index" });
                 }
 
-                return RedirectToRoute(new { controller = "GeneralPublicHome", action = "Index" });
+                return RedirectToRoute(new { controller = "GeneralPublic", action = "Index" });
 
             }
             else

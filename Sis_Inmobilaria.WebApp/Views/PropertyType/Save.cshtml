@@ -1,14 +1,14 @@
 ﻿@model SavePropertyTypeViewModel
 @{
     bool editMode = ViewBag.EditMode ?? false;
-    ViewData["Title"] = "Property save";
+    ViewData["Title"] = "Property Type save";
 }
 
 <div class="col-12 col-md-6 offset-md-3 ">
     <div class="card">
         <div class="card-header bg-success text-light"><h5 class="text-center">@(editMode ? "Edit - " + Model.Name : "New Property Type")</h5></div>
         <div class="card-body">
-            <form asp-controller="Asset" asp-action="@(editMode ? "Edit" : "Create")" method="POST">
+            <form asp-controller="PropertyType" asp-action="@(editMode ? "Edit" : "Create")" method="POST">
                 <input type="hidden" asp-for="Id" />
                 <div class="mb-3">
                     <label asp-for="Name" class="form-label">Name:</label>

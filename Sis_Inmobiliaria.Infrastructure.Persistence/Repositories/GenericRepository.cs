@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Sis_Inmobiliaria.Infrastructure.Persistence.Contexts;
 using Sis_Inmobiliaria.Core.Domain.Interfaces;
-
+using System.Linq;
 
 namespace Sis_Inmobiliaria.Infrastructure.Persistence.Repositories
 {
@@ -14,6 +14,7 @@ namespace Sis_Inmobiliaria.Infrastructure.Persistence.Repositories
         {
             _context = context;
         }
+
         public virtual async Task<Entity?> AddAsync(Entity entity)
         {
             await _context.Set<Entity>().AddAsync(entity);
@@ -50,38 +51,63 @@ namespace Sis_Inmobiliaria.Infrastructure.Persistence.Repositories
         }
         public virtual async Task<List<Entity>> GetAllList()
         {
-            return await _context.Set<Entity>().ToListAsync(); //EF - immediate execution
+            return await _context.Set<Entity>().ToListAsync();
         }
 
         public virtual async Task<List<Entity>> GetAllListWithInclude(List<string> properties)
         {
             var query = _context.Set<Entity>().AsQueryable();
 
+            if (properties == null || properties.Count == 0)
+                return await query.ToListAsync();
+
+            var entityType = _context.Model.FindEntityType(typeof(Entity));
+
             foreach (var property in properties)
             {
-                query = query.Include(property);
+                if (string.IsNullOrWhiteSpace(property))
+                    continue;
+
+                // Verifica que la navegación exista antes de llamar Include
+                if (entityType != null && entityType.FindNavigation(property) != null)
+                {
+                    query = query.Include(property);
+                }
+                // else: ignora include inválido (opcional: agregar logging aquí)
             }
 
-            return await query.ToListAsync(); //EF - immediate execution
+            return await query.ToListAsync();
         }
+
         public virtual async Task<Entity?> GetById(int id)
         {
             return await _context.Set<Entity>().FindAsync(id);
         }
         public virtual IQueryable<Entity> GetAllQuery()
         {
-            return _context.Set<Entity>().AsQueryable();//select * from PropertysType // where join //deferred execution
+            return _context.Set<Entity>().AsQueryable();
         }
         public virtual IQueryable<Entity> GetAllQueryWithInclude(List<string> properties)
         {
             var query = _context.Set<Entity>().AsQueryable();
 
+            if (properties == null || properties.Count == 0)
+                return query;
+
+            var entityType = _context.Model.FindEntityType(typeof(Entity));
+
             foreach (var property in properties)
             {
-                query = query.Include(property);
+                if (string.IsNullOrWhiteSpace(property))
+                    continue;
+
+                if (entityType != null && entityType.FindNavigation(property) != null)
+                {
+                    query = query.Include(property);
+                }
             }
 
-            return query; //EF - deffered execution
+            return query;
         }
     }
 }

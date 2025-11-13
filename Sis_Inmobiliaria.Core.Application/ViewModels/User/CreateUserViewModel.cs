@@ -38,7 +38,7 @@ namespace Sis_Inmobiliaria.Core.Application.ViewModels.User
         [Required(ErrorMessage = "You must enter the profile image of user")]
         public IFormFile? ProfileImageFile { get; set; }
 
-        [Range(1, int.MaxValue, ErrorMessage = "You must enter the valid role of user")]
+        [Required(ErrorMessage = "You must enter the valid role of user")]
         public required string Role { get; set; }
     }
 }

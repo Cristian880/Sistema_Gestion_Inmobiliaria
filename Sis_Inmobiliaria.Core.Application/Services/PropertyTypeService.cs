@@ -22,7 +22,7 @@ namespace Sis_Inmobiliaria.Core.Application.Services
         {
             try
             {
-                var listEntitiesQuery = _propertyTypeRepository.GetAllQueryWithInclude(["Property"]);
+                var listEntitiesQuery = _propertyTypeRepository.GetAllQueryWithInclude(["Properties"]);
 
                 var listEntityDtos = await listEntitiesQuery.ProjectTo<PropertyTypeDto>(mapper.ConfigurationProvider).ToListAsync();
 

@@ -10,7 +10,7 @@ namespace Sis_Inmobiliaria.Core.Application.Mappings.DtosAndViewModels
          {
              CreateMap<PropertyDto, PropertyViewModel>()
              .ForMember(dest => dest.PropertyType,
-             opt => opt.MapFrom(src => src.PropertyType))
+                        opt => opt.MapFrom(src => src.PropertyType))
              .ReverseMap()
              .ForMember(dest => dest.PropertyType, opt => opt.Ignore());
 

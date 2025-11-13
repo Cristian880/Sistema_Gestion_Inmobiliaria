@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 using Sis_Inmobiliaria.Core.Application.Dtos.Property;
 using Sis_Inmobiliaria.Core.Application.Interfaces;
 using Sis_Inmobiliaria.Core.Application.ViewModels.Property;
+using Sis_Inmobiliaria.WebApp.Helpers;
 using System.Security.Claims;
 
 namespace Sis_Inmobiliaria.WebApp.Controllers
@@ -40,6 +41,7 @@ namespace Sis_Inmobiliaria.WebApp.Controllers
             {
                 dtos = [];
             }
+            var activeDtos = dtos.Where(p => p.Active).ToList();
 
             var listEntityVms = mapper.Map<List<PropertyViewModel>>(dtos);
             return View(listEntityVms);
@@ -72,8 +74,22 @@ namespace Sis_Inmobiliaria.WebApp.Controllers
             }
             PropertyDto dto = mapper.Map<PropertyDto>(vm);
             dto.UserId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+            
+            var created = await propertyService.AddAsync(dto);
 
-            await propertyService.AddAsync(dto);
+            if (created != null)
+            {
+                if (vm.PropertyImageFile != null)
+                {
+                    var fileName = FileManager.Upload(vm.PropertyImageFile, created.Id.ToString(), "Properties");
+                    if (!string.IsNullOrWhiteSpace(fileName))
+                    {
+                        created.PropertyImage = fileName;
+                        await propertyService.UpdateAsync(created, created.Id);
+                    }
+                }
+            }
+
             if (User.IsInRole("Admin"))
             {
                 return RedirectToRoute(new { controller = "Property", action = "Index" });
@@ -93,7 +109,6 @@ namespace Sis_Inmobiliaria.WebApp.Controllers
             string? userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
             if (!User.IsInRole("Admin") && dto.UserId != userId)
             {
-                // ¡No autorizado!
                 return RedirectToRoute(new { controller = "Home", action = "AccessDenied" });
             }
             ViewBag.EditMode = true;
@@ -125,10 +140,24 @@ namespace Sis_Inmobiliaria.WebApp.Controllers
             }
 
             PropertyDto dto = mapper.Map<PropertyDto>(vm);
-            dto.UserId = existingDto.UserId; 
+            dto.UserId = existingDto.UserId;
+            
+            var currentImage = existingDto.PropertyImage ?? string.Empty;
+            dto.PropertyImage = FileManager.Upload(vm.PropertyImageFile, dto.Id.ToString(), "Properties", true, currentImage);
 
             await propertyService.UpdateAsync(dto, dto.Id);
             return RedirectToRoute(new { controller = "Property", action = "Index" });
+        }
+        public async Task<IActionResult> Details(int id)
+        {
+            var dto = await propertyService.GetById(id);
+            if (dto == null)
+            {
+                return RedirectToRoute(new { controller = "Property", action = "Index" });
+            }
+
+            PropertyViewModel vm = mapper.Map<PropertyViewModel>(dto);
+            return View(vm);
         }
 
         public async Task<IActionResult> Delete(int id)
@@ -164,8 +193,35 @@ namespace Sis_Inmobiliaria.WebApp.Controllers
                 return RedirectToRoute(new { controller = "Home", action = "AccessDenied" });
             }
 
-            await propertyService.DeleteAsync(vm.Id);
+            existingDto.Active = false;
+            await propertyService.UpdateAsync(existingDto, existingDto.Id);
+            //FileManager.Delete(vm.Id.ToString(), "Properties");
+            //await propertyService.DeleteAsync(vm.Id);
             return RedirectToRoute(new { controller = "Property", action = "Index" });
+        }
+        [Authorize(Roles = "Admin")]
+        public async Task<IActionResult> InactiveProperties()
+        {
+            var dtos = await propertyService.GetAllWithInclude();
+            var inactiveDtos = dtos.Where(p => !p.Active).ToList();
+            var listEntityVms = mapper.Map<List<PropertyViewModel>>(inactiveDtos);
+            return View("Index", listEntityVms);
+        }
+
+        [Authorize(Roles = "Admin")]
+        [HttpPost]
+        public async Task<IActionResult> Reactivate(int id)
+        {
+            var existingDto = await propertyService.GetById(id);
+            if (existingDto == null)
+            {
+                return RedirectToRoute(new { controller = "Property", action = "Index" });
+            }
+
+            existingDto.Active = true;
+            await propertyService.UpdateAsync(existingDto, existingDto.Id);
+
+            return RedirectToRoute(new { controller = "Property", action = "InactiveProperties" });
         }
     }
 }

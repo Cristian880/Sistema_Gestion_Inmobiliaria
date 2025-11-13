@@ -1,6 +1,10 @@
 ﻿@model List<PropertyViewModel>;
 @{
-    ViewData["Title"] = "Users";
+    ViewData["Title"] = "Peopieties";
+    if (User.IsInRole(Roles.GeneralPublic.ToString()))
+    {
+        Layout = "_LayoutGeneralPublic";
+    }
 }
 
 <div class="row">

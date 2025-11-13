@@ -23,7 +23,7 @@ namespace Sis_Inmobiliaria.Core.Application.ViewModels.Property
         public float Size { get; set; }
 
         [DataType(DataType.Upload)]
-        [Required(ErrorMessage = "Debe introducir una imagen de la propiedad")]
+        [Required(ErrorMessage = "You must enter the profile image of the property")]
         public IFormFile? PropertyImageFile { get; set; }
 
         [Required(ErrorMessage = "Debe introducir una descripcion")]
