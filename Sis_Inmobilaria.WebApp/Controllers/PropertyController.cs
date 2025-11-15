@@ -12,19 +12,7 @@ namespace Sis_Inmobiliaria.WebApp.Controllers
 {
     [Authorize]
     public class PropertyController(IPropertyService propertyService, IPropertyTypeService propertyTypeService, IMapper mapper) : Controller
-    { 
-    //public class PropertyController : Controller
-    //{
-    //    private readonly IPropertyService _PropertyService;
-    //    private readonly IPropertyTypeService _PropertyTypeService;
-    //    private readonly IMapper _mapper;
-
-    //    public PropertyController(IPropertyService PropertyService, IPropertyTypeService PropertyTypeService, IMapper mapper)
-    //    {
-    //        _PropertyService = PropertyService;
-    //        _PropertyTypeService = PropertyTypeService;
-    //        _mapper = mapper;
-    //    }
+    {
         public async Task<IActionResult> Index()
         {
             List<PropertyDto> dtos;

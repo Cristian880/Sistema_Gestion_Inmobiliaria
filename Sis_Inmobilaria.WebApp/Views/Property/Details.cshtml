@@ -11,10 +11,18 @@
                 <h1 class="display-5">
                     <i class="bi bi-house-door"></i> Property Details
                 </h1>
-                <!-- Go back to GeneralPublic Index instead of Property Index -->
-                <a class="btn btn-outline-secondary" asp-controller="GeneralPublic" asp-action="Index">
-                    <i class="bi bi-arrow-left"></i> Back
-                </a>
+                @if (isAdmin)
+                {
+                    <a class="btn btn-outline-secondary" asp-controller="Property" asp-action="Index">
+                        <i class="bi bi-arrow-left"></i> Back
+                    </a>
+                }
+                else if(!isAdmin)
+                {
+                    <a class="btn btn-outline-secondary" asp-controller="GeneralPublic" asp-action="Index">
+                        <i class="bi bi-arrow-left"></i> Back
+                    </a>
+                }
             </div>
         </div>
     </div>
@@ -23,14 +31,7 @@
         <!-- Main Image -->
         <div class="col-12 col-lg-6 mb-4">
             <div class="card shadow-sm">
-                @if (!string.IsNullOrEmpty(Model.PropertyImage))
-                {
-                    <img src="@Model.PropertyImage" class="card-img-top" alt="@Model.Name" />
-                }
-                else
-                {
-                    <img src="~/Images/no-image.png" class="card-img-top" alt="No image" />
-                }
+                <img src="@Model.PropertyImage" class="card-img-top responsive-image" alt="No image" />
             </div>
         </div>
 
@@ -41,7 +42,6 @@
                     <h2 class="card-title mb-3">@Model.Name</h2>
 
                     <div class="mb-4">
-                        <span class="badge bg-info">@Model.PropertyTypeId</span>
                         @if (Model.Active)
                         {
                             <span class="badge bg-success ms-2">Active</span>
