@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 using Sis_Inmobiliaria.Core.Application.Dtos.Property;
 using Sis_Inmobiliaria.Core.Application.Interfaces;
 using Sis_Inmobiliaria.Core.Application.ViewModels.Property;
+using Sis_Inmobiliaria.Core.Application.ViewModels.PropertyType;
 using Sis_Inmobiliaria.WebApp.Helpers;
 using System.Security.Claims;
 
@@ -43,7 +44,7 @@ namespace Sis_Inmobiliaria.WebApp.Controllers
             }
             var activeDtos = dtos.Where(p => p.Active).ToList();
 
-            var listEntityVms = mapper.Map<List<PropertyViewModel>>(dtos);
+            var listEntityVms = mapper.Map<List<PropertyViewModel>>(activeDtos);
             return View(listEntityVms);
         }
         public async Task<IActionResult> Create()
@@ -148,6 +149,7 @@ namespace Sis_Inmobiliaria.WebApp.Controllers
             await propertyService.UpdateAsync(dto, dto.Id);
             return RedirectToRoute(new { controller = "Property", action = "Index" });
         }
+
         public async Task<IActionResult> Details(int id)
         {
             var dto = await propertyService.GetById(id);
@@ -220,7 +222,6 @@ namespace Sis_Inmobiliaria.WebApp.Controllers
 
             existingDto.Active = true;
             await propertyService.UpdateAsync(existingDto, existingDto.Id);
-
             return RedirectToRoute(new { controller = "Property", action = "InactiveProperties" });
         }
     }

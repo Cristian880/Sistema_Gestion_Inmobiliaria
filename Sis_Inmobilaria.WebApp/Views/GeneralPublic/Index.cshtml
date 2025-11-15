@@ -1,54 +1,40 @@
-﻿@model List<PropertyViewModel>;
+﻿@model List<PropertyViewModel>
 @{
-    ViewData["Title"] = "Peopieties";
-    if (User.IsInRole(Roles.GeneralPublic.ToString()))
-    {
-        Layout = "_LayoutGeneralPublic";
-    }
+    ViewData["Title"] = "Browse Properties";
 }
 
-<div class="row">
-    <div class="text-center">
-        <h1 class="display-4">Propieties</h1>
-    </div>
-</div>
-
-<div class="row mt-4">
-    <div class="col-12 col-md-3">
-        <a class="btn btn-outline-success" asp-controller="Property" asp-action="Create"><i class="bi bi-file-earmark-plus"></i> New Property</a>
-    </div>
-
-</div>
-
-<div class="row mt-2">
+<div class="row g-4">
     @if (Model.Count == 0)
     {
-        <div class="text-center">
-            <h4 class="display-4">There aren't propieties</h4>
+        <div class="col-12">
+            <div class="alert alert-info alert-dismissible fade show" role="alert">
+                <i class="bi bi-info-circle"></i> No properties available at this time. Please check back soon!
+                <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+            </div>
         </div>
     }
     else
     {
-        foreach (var item in Model)
+        foreach (var property in Model.Where(p => p.Active))
         {
-            <div class="col-12 col-md-3">
-                <div class="card">
-                    <img src="@item.PropertyImage" class="card-img-top responsive-image" alt="@item.Name">
+            <div class="col-12 col-md-6 col-lg-4">
+                <div class="card h-100 border-0 shadow-sm overflow-hidden">
+                    <img src="@property.PropertyImage" class="card-img-top" alt="@property.Name" style="object-fit: cover; height: 250px;">
                     <div class="card-body">
-                        <h5 class="card-title">@item.Name </h5>
+                        <h5 class="card-title">@property.Name</h5>
+                        <p class="card-text text-muted small">@property.Direction</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <span class="h5 mb-0 text-success fw-bold">$@property.Price.ToString("N0")</span>
+                            <span class="badge bg-success">Active</span>
+                        </div>
                     </div>
-                    <ul class="list-group list-group-flush">
-                        <li class="list-group-item">Phone: @item.Direction</li>
-                        <li class="list-group-item">Email: @item.Price</li>
-                    </ul>
-                    <div class="card-body">
-                        <a class="btn btn-outline-danger float-end me-2" asp-controller="Property" asp-action="Details" asp-route-id="@item.Id"><i class="bi bi-trash"></i> Details</a>
+                    <div class="card-footer bg-white border-top">
+                        <a href="#" class="btn btn-primary btn-sm w-100">
+                            <i class="bi bi-info-circle"></i> View Details
+                        </a>
                     </div>
                 </div>
             </div>
         }
     }
 </div>
-
-
-

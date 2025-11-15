@@ -13,13 +13,14 @@ namespace Sis_Inmobiliaria.WebApp.Controllers
         {
             var dtos = await propertyTypeService.GetAllWithInclude();
 
-            var listEntityVms = mapper.Map<List<PropertyTypeViewModel>>(dtos);
+            var activeDtos = dtos.Where(pt => pt.Active).ToList();
 
+            var listEntityVms = mapper.Map<List<PropertyTypeViewModel>>(activeDtos);
             return View(listEntityVms);
         }
         public IActionResult Create()
         {
-            return View("Save", new SavePropertyTypeViewModel() {Id = 0, Name = "" , Active = false, Description = ""});
+            return View("Save", new SavePropertyTypeViewModel() {Id = 0, Name = "" , Active = true, Description = ""});
         }
 
         [HttpPost]
@@ -88,9 +89,39 @@ namespace Sis_Inmobiliaria.WebApp.Controllers
                 return View(vm);
             }
 
-            await propertyTypeService.DeleteAsync(vm.Id);
+            var existingDto = await propertyTypeService.GetById(vm.Id);
+            if (existingDto == null)
+            {
+                return RedirectToRoute(new { controller = "PropertyType", action = "Index" });
+            }
+
+            existingDto.Active = false;
+            await propertyTypeService.UpdateAsync(existingDto, existingDto.Id);
             return RedirectToRoute(new { controller = "PropertyType", action = "Index" });
         }
 
+        [Authorize(Roles = "Admin")]
+        public async Task<IActionResult> InactivePropertyTypes()
+        {
+            var dtos = await propertyTypeService.GetAllWithInclude();
+            var inactiveDtos = dtos.Where(pt => !pt.Active).ToList();
+            var listEntityVms = mapper.Map<List<PropertyTypeViewModel>>(inactiveDtos);
+            return View("Index", listEntityVms);
+        }
+
+        [Authorize(Roles = "Admin")]
+        [HttpPost]
+        public async Task<IActionResult> Reactivate(int id)
+        {
+            var existingDto = await propertyTypeService.GetById(id);
+            if (existingDto == null)
+            {
+                return RedirectToRoute(new { controller = "PropertyType", action = "Index" });
+            }
+
+            existingDto.Active = true;
+            await propertyTypeService.UpdateAsync(existingDto, existingDto.Id);
+            return RedirectToRoute(new { controller = "PropertyType", action = "InactivePropertyTypes" });
+        }
     }
 }

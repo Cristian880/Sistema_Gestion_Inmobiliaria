@@ -1,22 +1,37 @@
 ﻿@model DeletePropertyViewModel
-@{   
-    ViewData["Title"] = "Delete proerty type";
+@{
+    ViewData["Title"] = "Delete Property";
 }
 
-<div class="col-12 col-md-6 offset-md-3 ">
-    <div class="card">
-        <div class="card-header bg-danger text-light">
-            <h4 class="text-center"> Are you sure want to delete the Property -
-             @Model.Name? </h4></div>
-        <div class="card-body">
-            <form asp-controller="PropertyType" asp-action="Delete" method="POST">
-                <input type="hidden" asp-for="Id" />
-                
-                <div class="d-flex justify-content-center">
-                    <button type="submit" class="btn btn-danger me-2"><i class="bi bi-trash"></i> Delete</button>
-                    <a asp-controller="Property" asp-action="Index" class="btn btn-outline-warning"><i class="bi bi-arrow-left-short"></i> Back to list</a>
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-12 col-md-6 offset-md-3">
+            <div class="card shadow border-danger">
+                <div class="card-header bg-danger text-white">
+                    <h4 class="text-center mb-0">
+                        <i class="bi bi-exclamation-triangle"></i> Confirm Deletion
+                    </h4>
                 </div>
-            </form>
+                <div class="card-body">
+                    <div class="alert alert-warning" role="alert">
+                        <strong>Warning!</strong> This action will disable the property: <strong>@Model.Name</strong>
+                    </div>
+                    <p class="mb-4">The property will be marked as inactive and moved to the disabled properties section.</p>
+
+                    <form asp-controller="Property" asp-action="Delete" method="POST">
+                        <input type="hidden" asp-for="Id" />
+
+                        <div class="d-flex gap-2 justify-content-end">
+                            <a asp-controller="Property" asp-action="Index" class="btn btn-outline-secondary btn-lg">
+                                <i class="bi bi-arrow-left"></i> Cancel
+                            </a>
+                            <button type="submit" class="btn btn-danger btn-lg">
+                                <i class="bi bi-trash"></i> Disable Property
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
         </div>
     </div>
 </div>

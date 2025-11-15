@@ -46,7 +46,7 @@
                 }
             }
 
-            return $"{basePath}/{fileName}";
+            return $"/{basePath}/{fileName}";
         }
 
         public static bool Delete(string id, string folderName)

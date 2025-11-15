@@ -1,25 +1,40 @@
 ﻿@model List<PropertyViewModel>;
 @{
     ViewData["Title"] = "Propieties";
+    bool showingInactive = ViewContext.RouteData.Values["Action"]?.ToString() == "InactiveProperties";
+
 }
 
 <div class="row">
     <div class="text-center">
-        <h1 class="display-4">Propieties</h1>
+        <h1 class="display-4">@(showingInactive ? "Inactive Properties" : "Property")</h1>
     </div>
 </div>
 
 <div class="row mt-4">
     <div class="col-12 col-md-3">
-        <a class="btn btn-outline-success" asp-controller="Property" asp-action="Create">
-            <i class="bi bi-file-earmark-plus"></i> New Property
-        </a>
+        @if (!showingInactive)
+        {
+            <a class="btn btn-outline-success" asp-controller="Property" asp-action="Create">
+                <i class="bi bi-file-earmark-plus"></i> New Property 
+            </a>
+        }
     </div>
-    @if (User.IsInRole("Admin"))
+    @if (!showingInactive) @*&& User.IsInRole("Admin")) *@
     {
-        <a class="btn btn-outline-secondary ms-2" asp-controller="Property" asp-action="InactiveProperties">
-            <i class="bi bi-archive"></i> View Inactive Properties
-        </a>
+        <div class="col-12 col-md-3">
+            <a class="btn btn-outline-secondary" asp-controller="Property" asp-action="InactiveProperties">
+                <i class="bi bi-archive"></i> View Inactive properties
+            </a>
+        </div>
+    }
+    @if (showingInactive)
+    {
+        <div class="col-12 col-md-3">
+            <a class="btn btn-outline-primary" asp-controller="Property" asp-action="Index">
+                <i class="bi bi-arrow-left-short"></i> Back to Active properties
+            </a>
+        </div>
     }
 </div>
 
@@ -27,7 +42,7 @@
     @if (Model.Count == 0)
     {
         <div class="text-center">
-            <h4 class="display-4">There aren't propieties</h4>
+            <h4 class="display-4">@(showingInactive ? "There are no inactive property types" : "There aren't property types")</h4>
         </div>
     }
     else
@@ -43,12 +58,36 @@
                     <ul class="list-group list-group-flush">
                         <li class="list-group-item">Direction: @item.Direction</li>
                         <li class="list-group-item">Price: @item.Price</li>
+                        @if (item.Active)
+                        {
+                            <li class="badge bg-success">Active</li>
+                        }
+                        else
+                        {
+                            <li class="badge bg-danger">Inactive</li>
+                        }
                     </ul>
                     <div class="card-body">
-                        <a class="btn btn-outline-info float-end me-2" asp-controller="Property" asp-action="Details" asp-route-id="@item.Id"><i class="bi bi-trash"></i> Details</a>
-                        <a class="btn btn-outline-danger float-end me-2" asp-controller="Property" asp-action="Delete" asp-route-id="@item.Id"><i class="bi bi-trash"></i> Delete</a>
-                        <a class="btn btn-outline-warning float-end me-2" asp-controller="Property" asp-action="Edit" asp-route-id="@item.Id"><i class="bi bi-trash"></i> Edit</a>
-
+                        @if (!showingInactive)
+                        {
+                            <a class="btn btn-outline-warning btn-sm me-2" asp-controller="Property" asp-action="Edit" asp-route-id="@item.Id">
+                                <i class="bi bi-pencil"></i> Edit
+                            </a>
+                            <a class="btn btn-outline-danger btn-sm" asp-controller="Property" asp-action="Delete" asp-route-id="@item.Id">
+                                <i class="bi bi-trash"></i> Delete
+                            </a>
+                            <a class="btn btn-outline-info btn-sm" asp-controller="Property" asp-action="Details" asp-route-id="@item.Id">
+                                <i class="bi bi-book-fill"></i> Details
+                            </a>
+                        }
+                        else
+                        {
+                            <form asp-controller="Property" asp-action="Reactivate" asp-route-id="@item.Id" method="POST" class="d-inline">
+                                <button type="submit" class="btn btn-outline-success btn-sm">
+                                    <i class="bi bi-arrow-counterclockwise"></i> Reactivate
+                                </button>
+                            </form>
+                        }
                     </div>
                 </div>
             </div>
