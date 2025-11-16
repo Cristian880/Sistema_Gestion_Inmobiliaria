@@ -63,7 +63,8 @@ namespace Sis_Inmobiliaria.WebApp.Controllers
             }
             PropertyDto dto = mapper.Map<PropertyDto>(vm);
             dto.UserId = User.FindFirstValue(ClaimTypes.NameIdentifier);
-            
+            dto.Active = true;
+
             var created = await propertyService.AddAsync(dto);
 
             if (created != null)
@@ -130,9 +131,17 @@ namespace Sis_Inmobiliaria.WebApp.Controllers
 
             PropertyDto dto = mapper.Map<PropertyDto>(vm);
             dto.UserId = existingDto.UserId;
-            
-            var currentImage = existingDto.PropertyImage ?? string.Empty;
-            dto.PropertyImage = FileManager.Upload(vm.PropertyImageFile, dto.Id.ToString(), "Properties", true, currentImage);
+            dto.Active = existingDto.Active;
+
+            if (vm.PropertyImageFile != null)
+            {
+                var currentImage = existingDto.PropertyImage ?? string.Empty;
+                dto.PropertyImage = FileManager.Upload(vm.PropertyImageFile, dto.Id.ToString(), "Properties", true, currentImage);
+            }
+            else
+            {
+                dto.PropertyImage = existingDto.PropertyImage; // Mantener imagen actual
+            }
 
             await propertyService.UpdateAsync(dto, dto.Id);
             return RedirectToRoute(new { controller = "Property", action = "Index" });
@@ -150,7 +159,7 @@ namespace Sis_Inmobiliaria.WebApp.Controllers
             return View(vm);
         }
 
-        public async Task<IActionResult> Delete(int id)
+        public async Task<IActionResult> Disable(int id)
         {
             var dto = await propertyService.GetById(id);
             if (dto == null)
@@ -169,7 +178,7 @@ namespace Sis_Inmobiliaria.WebApp.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Delete(DeletePropertyViewModel vm)
+        public async Task<IActionResult> Disable(DeletePropertyViewModel vm)
         {
             var existingDto = await propertyService.GetById(vm.Id);
             if (existingDto == null)
@@ -188,6 +197,33 @@ namespace Sis_Inmobiliaria.WebApp.Controllers
             //FileManager.Delete(vm.Id.ToString(), "Properties");
             //await propertyService.DeleteAsync(vm.Id);
             return RedirectToRoute(new { controller = "Property", action = "Index" });
+        }
+        public async Task<IActionResult> Delete(int id)
+        {
+            if (!ModelState.IsValid)
+            {
+                return RedirectToRoute(new { controller = "Property", action = "Index" });
+            }
+            var dto = await propertyService.GetById(id);
+            if (dto == null)
+            {
+                return RedirectToRoute(new { controller = "Property", action = "Index" });
+            }
+            DeletePropertyViewModel vm = mapper.Map<DeletePropertyViewModel>(dto);
+            return View(vm);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Delete(DeletePropertyViewModel vm)
+        {
+            if (!ModelState.IsValid)
+            {
+                return RedirectToRoute(new { controller = "Property", action = "Index" });
+
+            }
+            await propertyService.DeleteAsync(vm.Id);
+            return RedirectToRoute(new { controller = "Property", action = "Index" });
+
         }
         [Authorize(Roles = "Admin")]
         public async Task<IActionResult> InactiveProperties()

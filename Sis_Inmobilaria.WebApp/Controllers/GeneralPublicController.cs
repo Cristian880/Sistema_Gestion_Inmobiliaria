@@ -9,7 +9,7 @@ using Sis_Inmobiliaria.Core.Application.ViewModels.Property;
 namespace Sis_Inmobiliaria.WebApp.Controllers
 {
     [Authorize(Roles = "GeneralPublic")]
-    public class GeneralPublicController(IPropertyService propertyService, IPropertyTypeService propertyTypeService, IMapper mapper) : Controller
+    public class GeneralPublicController(IPropertyService propertyService, IMapper mapper) : Controller
     {
         public async Task<IActionResult> Index()
         {

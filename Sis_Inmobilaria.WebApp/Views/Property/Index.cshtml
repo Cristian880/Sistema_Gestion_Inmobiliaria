@@ -83,8 +83,13 @@
                         else
                         {
                             <form asp-controller="Property" asp-action="Reactivate" asp-route-id="@item.Id" method="POST" class="d-inline">
-                                <button type="submit" class="btn btn-outline-success btn-sm">
-                                    <i class="bi bi-arrow-counterclockwise"></i> Reactivate
+                                 <button type="submit" class="btn btn-outline-success btn-sm">
+                                     <i class="bi bi-arrow-counterclockwise"></i> Reactivate
+                                 </button>
+                             </form>
+                            <form asp-controller="Property" asp-action="Delete" asp-route-id="@item.Id" method="POST" class="d-inline">
+                                <button type="submit" class="btn btn-outline-danger btn-sm">
+                                    <i class="bi bi-trash"></i> Delete
                                 </button>
                             </form>
                         }
